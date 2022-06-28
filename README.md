@@ -199,6 +199,7 @@ These are the various routes that can be accessed once the servers are all runni
  ```
 
 * Returns: **Any array of questions, a number of totalQuestions that met the search term and the current category string**
+```
 {
   "currentCategory": "Science",
   "questions": [
@@ -212,3 +213,4 @@ These are the various routes that can be accessed once the servers are all runni
   ],
   "totalQuestions": 1
 }
+```
