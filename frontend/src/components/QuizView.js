@@ -49,7 +49,7 @@ class QuizView extends Component {
     }
 
     $.ajax({
-      url: '/quizzes', //TODO: update request URL
+      url: '/play', //TODO: update request URL
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
@@ -62,6 +62,8 @@ class QuizView extends Component {
       },
       crossDomain: true,
       success: (result) => {
+        console.log(result)
+        console.log(result.question)
         this.setState({
           showAnswer: false,
           previousQuestions: previousQuestions,
