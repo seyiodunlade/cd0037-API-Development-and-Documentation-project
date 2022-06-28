@@ -54,16 +54,16 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data['id'], question_id)
         self.assertEqual(question, None)
 
-    # def test_create_new_question(self):
-    #     res = self.client().post("/questions", json=self.new_question)
-    #     data = json.loads(res.data)
-    #     question = Question.query.order_by(Question.id).filter((Question.question.ilike(f'%What is the most populous African country?%'))).all()
+    def test_create_new_question(self):
+        res = self.client().post("/questions", json=self.new_question)
+        data = json.loads(res.data)
+        question = Question.query.order_by(Question.id).filter((Question.question.ilike(f'%What is the most populous African country?%'))).all()
 
-    #     print(question[0].id)
+        print(question[0].id)
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data["success"], True)
-    #     self.assertEqual(data["id"], question[0].id)
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data["success"], True)
+        self.assertEqual(data["id"], question[0].id)
 
     def test_search_question(self):
         res = self.client().post("questions/search", json=self.search_term)
